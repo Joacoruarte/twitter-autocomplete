@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-[#444a54] text-white;
+    }
+}
+
+@layer components{
+    .box{
+        @apply w-max h-full bg-[rgba(17,24,39,1)] p-4 rounded-xl flex flex-col;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .box-editable{
+        @apply resize-none min-w-[30rem] min-h-[12rem] outline-none focus:outline-none focus:shadow-none rounded-md pl-4 pt-4 text-lg bg-transparent;
+    }
+
+    .box-button{
+        @apply border-t-[1px] border-[rgb(47,51,54)] mt-4 p-4 flex justify-end;
+    }
+
+    .button-twitt{
+        @apply bg-[rgb(29,155,240)] text-white px-4 py-2 rounded-full font-semibold hover:bg-[rgb(30,136,207)] transition-all
+    }
+
+    .autocomplete-panel {
+        @apply absolute left-0 w-full max-w-[20rem] rounded-lg bg-[rgba(17,24,39,1)];
+        box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
+          0 10px 10px -5px rgba(255, 255, 255, 0.04),
+          0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .autocomplete-items {
+        height: 100%;
+        max-height: 24rem;
+        overflow-y: scroll;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .autocomplete-items::-webkit-scrollbar {
+        width: 1px;
+    }
+    .autocomplete-items::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    .autocomplete-items::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    .autocomplete-items::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+    .autocomplete-items {
+        height: 100%;
+        max-height: 24rem;
+        overflow-y: scroll;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+    .autocomplete-item {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        background: transparent;
+        width: 100%;
+    }
+      
+    .autocomplete-item:hover {
+        background: #000;
+    }
+      
+    .autocomplete-item > :not([hidden]) ~ :not([hidden]) {
+        margin-top: calc(0.25rem * calc(1 - 0));
+        margin-bottom: calc(0.25rem * 0);
+    }
+      
+    .autocomplete-item {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+      
+    .autocomplete-item-selected {
+        background-color: rgba(31, 41, 55, 1);
+    }
+
+    .account-body {
+        display: flex;
+        align-items: center;
+    }
+      
+    .account-body > :not([hidden]) ~ :not([hidden]) {
+        margin-right: calc(0.75rem * 0);
+        margin-left: calc(0.75rem * calc(1 - 0));
+    }
+    .account-avatar,
+    .box-avatar {
+        height: 48px;
+        width: 48px;
+        flex: none;
+        border-radius: 9999px;
+        background-color: rgba(255, 255, 255, 1);
+        overflow: hidden;
+    }
+
+    .account-avatar img{
+        width: 100%;
+        height: auto;
+    }
+
+    .account-name {
+        font-weight: 600;
+        color: rgba(255, 255, 255, 1);
+    }
+    .account-handle {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: rgba(107, 114, 128, 1);
+        text-align: left;
+    }
+}
