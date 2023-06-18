@@ -17,7 +17,12 @@
     }
 
     .box-editable{
-        @apply resize-none min-w-[30rem] min-h-[12rem] outline-none focus:outline-none focus:shadow-none rounded-md pl-4 pt-4 text-lg bg-transparent;
+        @apply resize-none min-w-[30rem] max-w-[30rem] min-h-[12rem] outline-none focus:outline-none focus:shadow-none rounded-md pl-4 pt-4 text-lg bg-transparent;
+    }
+
+    .box-editable[placeholder]:empty:before {
+        content: attr(placeholder);
+        color: #6b7280;
     }
 
     .box-button{
