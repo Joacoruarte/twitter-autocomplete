@@ -3,7 +3,7 @@ export function formatMentions({ value , userHandle }) {
 
     const formatedText = textSplit.map((e, i) => {
       if (e.includes('@') && !e.includes('pointer">@')) {
-        return ` <span class="text-red-500 hover:text-red-400 transition-colors cursor-pointer">@${userHandle}</span>&nbsp; `;
+        return ` <span class="text-[rgb(29,155,240)] hover:text-[rgba(29,156,240,0.77)] transition-colors cursor-pointer">@${userHandle}</span>&nbsp; `;
       }
       if (e.includes('pointer">@')) {
         return e + '&nbsp; ';

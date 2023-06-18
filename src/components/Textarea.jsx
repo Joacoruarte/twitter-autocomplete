@@ -52,6 +52,7 @@ export default function Textarea({ setTwitts, twitts }) {
 
   const handleSubmit = () => {
     const value = divRef.current.innerHTML;
+    if(value === '') return;
     setTwitts([...twitts, value]);
     divRef.current.innerHTML = '';
   };
